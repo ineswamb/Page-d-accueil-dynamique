@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1.0">
+      <link rel="stylesheet" href="style.css" type="text/css">
+      <title>Accueil</title>
+  </head>
+  
+  <body>
+  <header>
+    <div id="mySousmenu" class="sousmenu">
+      <a href="javascript:void(0)" class="closebutton" onclick="closeSousmenu()">&times;</a>
+      <a href="#">Concerts</a>
+      <a href="#">Festivals</a>
+      <a href="#">Blog</a>
+      <a href="#">À propos</a>
+    </div>
+    <div class="navbar" id="nav">
+      <span onclick="openSousmenu()" class="nav-button"><img src="bars.png" class="bars" alt="bars"></span>
+      <img src="thesound.png" class="logo" alt="logo">
+    <div class="dropdown"> 
+      <button onclick="Dropdownfunction()" class="dropbutton">Mon espace</button>
+       <div id="mydropdown" class="dropdown-content">
+        <a href="#">S'identifier</a>
+        <a href="#">S'inscrire</a>
+      </div>
+    </div>
+    </div>
+  </header>
+  <section class="bloc">
+    <div class="bloc-couleur">
+      <h1 id="title">Retrouvez toutes les actus de vos artistes préféres !</h1>
+    </div>
+  </section>
+  <section class="bloc">
+      <div class="bloc-couleur2">
+          <h2 class="hide" id="title2">L'album du moment</h2>
+          <img src="album.jpg" class="hide" id="album" alt="album">
+          <p class="hide" id="para1">Le groupe LSD formé par Sia, Diplo et Labirinth vient de sortir son tout premier album !</p>
+      </div>
+  </section>
+  <section class="bloc">
+      <div class="bloc-couleur3">
+        <h1>Album example :</h1>
+		 <p id="txt1">Coucouc</p>
+		 <p id="txt2">Hey</p>
+      </div>
+  </section>
+  
+  <script>
+
+/* Fonction dropdown du bouton mon espace */
+    function Dropdownfunction() {
+      document.getElementById("mydropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbutton')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+         }
+        }
+       } 
+      }
+
+/* Fonction fade-in fade-out de la barre de nav */
+    var fade = document.querySelector("#nav")
+    var ValueScroll = 15;
+    document.addEventListener('scroll',() => {
+    var scroll  = document.documentElement.scrollTop;
+      if(scroll < ValueScroll) {
+      fade.style.opacity = "1";
+      } else {
+    	fade.style.opacity = "0";
+      }
+    ValueScroll = scroll;
+    });
+
+/* Fonction sous-menu qui apparait à gauche */
+    function openSousmenu() {
+    document.getElementById("mySousmenu").style.width = "250px";
+    }
+    function closeSousmenu() {
+    document.getElementById("mySousmenu").style.width = "0";
+    }
+
+/* Fonction qui fait apparaître du texte et une image au scroll */
+   var valScroll = 520;
+   document.addEventListener('scroll',() => {
+   var myScroll  = document.documentElement.scrollTop;
+     if(myScroll >= valScroll) {
+       titre2 = document.querySelector("#title2")
+	   titre2.classList.add("opacity")
+	   titre2.style.transition = "1s";
+       img = document.querySelector("#album")
+       img.classList.add("opacity")
+	   paragraphe = document.querySelector("#para1")
+       paragraphe.classList.add("opacity")
+     valScroll = myScroll;
+     }
+    }
+   );
+
+  </script>
+
+  </body>
+</html>

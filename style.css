@@ -1,0 +1,215 @@
+body, html{
+  margin :0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial';
+}
+
+.sousmenu {
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 2; 
+  background-color: rgb(22, 22, 22); 
+  overflow-x: hidden; 
+  transition: 1s; 
+}
+
+.sousmenu a {
+  display: block;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  transition: 1s;
+}
+
+.sousmenu a:hover {
+  color: rgb(204, 100, 100);
+}
+
+.sousmenu .closebutton {
+  position: relative;
+  font-size: 40px;
+  margin-left: 150px;
+}
+
+@media screen and (max-height: 450px) {
+  .sousmenu {padding-top: 15px;}
+  .sousmenu a {font-size: 18px;}
+}
+
+.navbar{
+  position: fixed;
+  background-color: rgb(22, 22, 22); 
+  width: 100%;
+  height: 80px;
+  transition: 1s;
+  opacity: 1;
+  z-index: 1;
+}
+
+.nav-button{
+  background-color: rgb(22, 22, 22);
+  color: white;
+  padding: 28px 48px;
+  font-size: 20px;
+  border: none;
+  float: left;
+}
+
+.nav-button:hover {
+  background-color:rgb(41, 41, 41);
+
+}
+
+.dropbutton {
+  background-color: rgb(22, 22, 22);
+  color: white;
+  padding: 28px 28px;
+  font-size: 18px;
+  border: none;
+}
+
+.dropbutton:hover {
+  background-color: rgb(233, 116, 116);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:rgb(22, 22, 22);
+  width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 24px 26px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: rgb(63, 63, 63);
+}
+
+.show {
+  display: block;
+}
+
+.logo{
+  width: 220px;
+}
+
+.bars {
+  width: 30px;
+}
+
+#nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloc-couleur{
+  width: 1024px;
+  height: 700px;
+  background-color: rgb(204, 100, 100);
+}
+
+.bloc-couleur2{
+  width: 1024px;
+  height: 1000px;
+  background-color: rgb(168, 67, 67);
+}
+
+.bloc-couleur3{
+  width: 1024px;
+  height: 700px;
+  background-color: rgb(145, 52, 52);
+}
+
+.bloc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h1{
+  font-size: 60px;
+  padding-top: 20%;
+  text-align: center;
+  color: white;
+  opacity: 1;
+  animation-name: fadeInOut;
+  animation-duration: 8s;
+}
+
+#title2{
+  padding-top: 15%;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  transition: 5s;
+  opacity: 0;
+}
+
+#album{
+  margin-left: 30%;
+  opacity: 0;
+  transition: 5s;
+}
+
+#para1{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  transition: 5s;
+  opacity: 0;
+}
+
+.opacity{
+  opacity: 1 !important;
+  color: black;
+  transition: 5s;
+}
+
+@media screen and (max-width: 575px) {
+  .logo {width: 140px; height: 70px;}
+  .nav-button {font-size: 12px;}
+  .dropbutton {font-size: 10px; padding: 24px 36px;}
+  .dropdown-content a {font-size: 10px; text-align: left;}
+  .bars {width: 20px;}
+  h1 {font-size: 24px;}
+  .sousmenu a {font-size: 20px;}
+  .bloc {display: flex; justify-content: center;}
+  #album {width: 50%; margin-left: 25%;}
+  #title {font-size: 60px;}
+
+}
